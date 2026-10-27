@@ -14,8 +14,8 @@ and the case's intended inputs to the agent.
    pair, with the skill as the only deliberate difference. `setup_id` identifies
    the complete recorded setup for one case, not merely a friendly name.
 3. Start independent fresh sessions. A baseline receives the prompt without
-   PatchProof; the skill condition receives the same prompt and the skill. In
-   Codex, explicit skill invocation may be used. Record that choice.
+   PatchProof; the skill condition receives the same prompt and the skill. Where
+   supported, invoke the skill explicitly and record that choice.
 4. Run several pairs per case, alternate or randomize the order, and keep failed,
    interrupted, and successful attempts. Do not select only persuasive examples.
 5. Save tool outputs, the final artifact/diff, and the transcript. An assertion

@@ -33,9 +33,10 @@ This is a testable design hypothesis, not a claim of a novel algorithm or a
 proven improvement over an unmodified agent. See the
 [alternatives and their limitations](docs/design-options.vi.md).
 
-## Use with Codex
+## Installation in a repository
 
-Copy the complete `skills/feedback-to-fix` folder into your target repository:
+For a coding agent that discovers repository-local skills in `.agents/skills`,
+copy the complete `skills/feedback-to-fix` folder into your target repository:
 
 ```text
 your-repository/
@@ -55,18 +56,19 @@ New-Item -ItemType Directory -Force -Path "$targetProject\.agents\skills" | Out-
 Copy-Item -LiteralPath '.\skills\feedback-to-fix' -Destination "$targetProject\.agents\skills" -Recurse
 ```
 
-Review an existing folder before copying over it. Then invoke it in Codex:
+Review an existing folder before copying over it. If your agent supports
+explicit skill invocation, use:
 
 ```text
 $feedback-to-fix Resolve this feedback: [requested behavior and constraints].
 ```
 
-Repository skill discovery and explicit invocation follow the
-[official OpenAI documentation](https://learn.chatgpt.com/docs/build-skills).
+For the discovery rules behind this example, see the
+[official setup documentation](https://learn.chatgpt.com/docs/build-skills).
 The skill uses the [Agent Skills format](https://agentskills.io/home).
-For other clients, use their documented skill location; compatibility has not
-been tested in those clients. Copying the skill is separate from running this
-repository's evaluation helper.
+Other clients may use different locations; check their documentation.
+Compatibility has not been tested across clients. Copying the skill is separate
+from running this repository's evaluation helper.
 
 ## A small example
 

@@ -34,13 +34,14 @@ trừ điều gì, còn thiếu tầng kiểm chứng nào.
 - Build thành công nhưng chưa thử bàn phím: báo đúng phạm vi đã kiểm chứng.
 - Chỉ đổi một câu chữ rõ ràng: sửa gọn và kết thúc.
 
-## Cài vào một repo dùng Codex
+## Cài skill vào repo
 
-Copy nguyên thư mục `skills/feedback-to-fix` vào `.agents/skills/` của repo đích.
-Giữ cả thư mục `references`. Xem lệnh PowerShell và nguồn hướng dẫn chính thức
-trong [README tiếng Anh](README.md#use-with-codex).
+Với agent hỗ trợ tìm skill trong `.agents/skills` của repo, copy nguyên thư mục
+`skills/feedback-to-fix` vào thư mục đó. Giữ cả thư mục `references`. Xem lệnh
+PowerShell và nguồn hướng dẫn chính thức trong
+[README tiếng Anh](README.md#installation-in-a-repository).
 
-Gọi bằng:
+Nếu agent hỗ trợ gọi skill trực tiếp, dùng:
 
 ```text
 $feedback-to-fix Sửa theo feedback sau: ...
