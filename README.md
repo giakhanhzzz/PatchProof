@@ -7,10 +7,10 @@
 
 [Initial review and open limitations](docs/review.vi.md)
 
-PatchProof is an instruction-only Agent Skill for corrective coding work. It
-helps an agent decide when to inspect, experiment, implement, ask, verify, or
-finish. The decision depends on the missing evidence and the consequences of
-being wrong.
+PatchProof is an instruction-only Agent Skill that helps AI coding agents
+respond to feedback, make focused code changes, and report what was verified.
+It guides the agent to inspect, experiment, implement, ask, verify, or finish
+according to the available evidence and the consequences of being wrong.
 
 It targets three observable failures:
 
@@ -21,6 +21,19 @@ It targets three observable failures:
 There is one skill, a collection of invented evaluation scenarios, and a small
 offline helper for summarizing human-graded paired runs. No model API, account,
 or background service is required to read or use the skill.
+
+## Quick start
+
+From your project directory, run:
+
+```bash
+npx skills add giakhanhzzz/PatchProof --skill feedback-to-fix --copy
+```
+
+The installer requires Node.js 22.20 or later. Select your coding agent if
+prompted. Review the [skill instructions](skills/feedback-to-fix/SKILL.md)
+before use. The command installs in the current project by default; manual
+installation is described below.
 
 ## Why another skill?
 

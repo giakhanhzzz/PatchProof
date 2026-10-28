@@ -7,9 +7,20 @@
 
 [Tự rà soát và giới hạn còn lại](docs/review.vi.md)
 
-PatchProof là một skill hướng dẫn agent xử lý feedback và những lần sửa code
-chưa rõ nguyên nhân. Agent chọn giữa đọc thêm, thử nghiệm, sửa, hỏi, kiểm chứng
-hoặc kết thúc dựa trên điều chưa biết và hậu quả nếu đoán sai.
+PatchProof là một skill giúp AI coding agent xử lý feedback, sửa code đúng phạm vi
+và báo rõ điều đã kiểm chứng. Agent chọn giữa đọc thêm, thử nghiệm, sửa, hỏi,
+kiểm chứng hoặc kết thúc dựa trên điều chưa biết và hậu quả nếu đoán sai.
+
+## Cài nhanh
+
+Mở terminal trong thư mục dự án và chạy:
+
+```bash
+npx skills add giakhanhzzz/PatchProof --skill feedback-to-fix --copy
+```
+
+Cần Node.js 22.20 trở lên. Chọn coding agent của bạn nếu được hỏi. Lệnh cài vào
+dự án hiện tại; hướng dẫn cài thủ công nằm ở bên dưới.
 
 ## Ba biến số quyết định
 
