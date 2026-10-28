@@ -136,15 +136,11 @@ Vì vậy đây là **bản thiết kế đã tinh gọn để kiểm nghiệm**
 chứng minh. Cần so sánh agent mặc định với cùng agent có skill; bỏ hoặc thu hẹp
 nhánh nào không tạo cải thiện, và giữ cả những lần chạy thất bại.
 
-## Những gì đã có để tham khảo
+## Tài liệu kỹ thuật tham khảo
 
-- [Superpowers](https://github.com/obra/superpowers) đã có các workflow về lập kế
-  hoạch, debug và kiểm chứng. PatchProof không xem những nguyên tắc đó là mới.
-- [GitHub Spec Kit](https://github.github.com/spec-kit/reference/agentic-sdd.html)
-  có kiểm tra tính nhất quán giữa yêu cầu, kế hoạch và công việc.
-- [Anthropic Skill Creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md)
-  dùng các lần chạy có và không có skill để đánh giá. PatchProof giữ nguyên nhu
-  cầu có đối chứng; helper ở đây chỉ tổng hợp điểm chấm thủ công.
-- [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
-  phân biệt lời agent nói với kết quả và các lớp đánh giá. Không suy ra tác dụng
-  của skill chỉ từ chất lượng văn phong hoặc một lệnh thành công.
+- [Agent Skills specification](https://agentskills.io/specification): cấu trúc
+  `SKILL.md` và các tài nguyên đi kèm.
+- [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents):
+  cách đánh giá hành vi agent dựa trên kết quả và bằng chứng. Helper của
+  PatchProof chỉ tổng hợp điểm chấm thủ công; muốn đánh giá tác dụng của skill
+  cần các lần chạy có và không có skill để đối chứng.

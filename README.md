@@ -1,16 +1,30 @@
 # PatchProof
 
-**Choose the next useful action before making the next edit.**
+**Help your coding agent turn feedback into a focused, verifiable fix.**
 
 [Tiếng Việt](README.vi.md) · [The skill](skills/feedback-to-fix/SKILL.md) ·
-[Design tradeoffs](docs/design-options.vi.md) · [Evaluation](evals/README.md)
+[Evaluation](evals/README.md)
 
-[Initial review and open limitations](docs/review.vi.md)
+You give an AI coding agent feedback. Sometimes it misses a detail, changes more
+than you asked for, or says it is done without showing what it checked.
+PatchProof gives the agent a practical checklist for handling that feedback.
 
-PatchProof is an instruction-only Agent Skill that helps AI coding agents
-respond to feedback, make focused code changes, and report what was verified.
-It guides the agent to inspect, experiment, implement, ask, verify, or finish
-according to the available evidence and the consequences of being wrong.
+### A quick example
+
+You ask: “Change the login error message, but leave authentication alone.”
+
+With PatchProof, the intended workflow is to:
+
+1. Find where the message is shown and change only what the request needs.
+2. Check relevant changes and run an appropriate test when available.
+3. Tell you what changed, what was checked, and what still needs checking.
+
+For example, if the test passes but nobody tried the screen manually, the agent
+should say so. That makes it easier to decide what to review next. This is an
+illustration of the intended behavior, not a recorded result or a guarantee.
+
+PatchProof is an instruction-only Agent Skill: it guides an agent but does not
+enforce its behavior or replace your review.
 
 It targets three observable failures:
 
@@ -35,16 +49,17 @@ prompted. Review the [skill instructions](skills/feedback-to-fix/SKILL.md)
 before use. The command installs in the current project by default; manual
 installation is described below.
 
-## Why another skill?
+## How it works
 
-Planning, debugging, and verification skills already exist. PatchProof explores
-a narrower question: **which action is useful now, and when is more process
-unnecessary?** It includes straightforward control cases where extra questions,
-planning, or investigation would be a regression.
+PatchProof guides the agent to choose an action based on the task and the
+evidence available:
 
-This is a testable design hypothesis, not a claim of a novel algorithm or a
-proven improvement over an unmodified agent. See the
-[alternatives and their limitations](docs/design-options.vi.md).
+- Make a focused change when the request is clear.
+- Inspect or experiment when the cause is uncertain.
+- Ask when an important requirement conflicts or remains unclear.
+- Verify the result, and report any checks that could not be completed.
+
+Simple tasks should stay simple: skip extra process when it adds no value.
 
 ## Installation in a repository
 
@@ -130,7 +145,7 @@ checking the saved transcripts and artifacts.
 
 ```text
 skills/feedback-to-fix/   The installable skill and optional examples
-docs/                    Alternatives, limitations, and the chosen design
+docs/                    Design notes and limitations
 evals/                   Synthetic cases, scoring protocol, offline helper
 tests/                   Helper regression tests and package integrity checks
 .github/workflows/       Cross-platform checks, ready for GitHub Actions

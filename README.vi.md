@@ -1,15 +1,30 @@
 # PatchProof
 
-**Chọn bước tiếp theo có ích trước khi sửa tiếp một dòng code.**
+**Giúp AI sửa theo feedback gọn hơn và báo rõ những gì đã kiểm tra.**
 
 [English](README.md) · [Skill](skills/feedback-to-fix/SKILL.md) ·
-[Phân tích phương án](docs/design-options.vi.md) · [Cách đánh giá](evals/README.md)
+[Cách đánh giá](evals/README.md)
 
-[Tự rà soát và giới hạn còn lại](docs/review.vi.md)
+Bạn giao feedback cho AI sửa code. Đôi khi AI bỏ sót ý, sửa lan sang phần khác,
+hoặc báo xong mà không nói rõ đã kiểm tra gì. PatchProof đưa cho AI một bộ
+hướng dẫn để xử lý feedback có trình tự và báo kết quả rõ ràng hơn.
 
-PatchProof là một skill giúp AI coding agent xử lý feedback, sửa code đúng phạm vi
-và báo rõ điều đã kiểm chứng. Agent chọn giữa đọc thêm, thử nghiệm, sửa, hỏi,
-kiểm chứng hoặc kết thúc dựa trên điều chưa biết và hậu quả nếu đoán sai.
+### Ví dụ dễ hình dung
+
+Bạn yêu cầu: “Đổi thông báo lỗi đăng nhập, đừng sửa logic xác thực.”
+
+PatchProof hướng dẫn AI:
+
+1. Tìm nơi hiển thị thông báo và chỉ sửa phần cần thiết.
+2. Xem lại thay đổi, chạy kiểm tra phù hợp nếu có.
+3. Nói rõ đã sửa gì, đã kiểm tra gì và còn gì chưa kiểm tra.
+
+Ví dụ, nếu bài kiểm tra chạy thành công nhưng chưa ai thử trực tiếp trên màn
+hình, AI cần nói rõ điều đó. Nhờ vậy bạn dễ biết còn cần tự xem phần nào.
+Đây là ví dụ minh họa cách skill được thiết kế, không phải kết quả chạy thực tế.
+
+PatchProof là hướng dẫn cho AI, không tự ép AI tuân thủ và không thay thế việc
+bạn xem lại kết quả.
 
 ## Cài nhanh
 
