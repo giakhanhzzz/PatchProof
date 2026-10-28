@@ -2,8 +2,7 @@
 
 **Help your coding agent turn feedback into a focused, verifiable fix.**
 
-[Tiếng Việt](README.vi.md) · [The skill](skills/feedback-to-fix/SKILL.md) ·
-[Evaluation](evals/README.md)
+[The skill](skills/feedback-to-fix/SKILL.md) · [Evaluation](evals/README.md)
 
 You give an AI coding agent feedback. Sometimes it misses a detail, changes more
 than you asked for, or says it is done without showing what it checked.
@@ -60,6 +59,10 @@ evidence available:
 - Verify the result, and report any checks that could not be completed.
 
 Simple tasks should stay simple: skip extra process when it adds no value.
+
+Technical references: the [Agent Skills specification](https://agentskills.io/specification)
+describes the skill format; [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
+discusses evaluating agent outcomes.
 
 ## Installation in a repository
 
@@ -145,7 +148,6 @@ checking the saved transcripts and artifacts.
 
 ```text
 skills/feedback-to-fix/   The installable skill and optional examples
-docs/                    Design notes and limitations
 evals/                   Synthetic cases, scoring protocol, offline helper
 tests/                   Helper regression tests and package integrity checks
 .github/workflows/       Cross-platform checks, ready for GitHub Actions
